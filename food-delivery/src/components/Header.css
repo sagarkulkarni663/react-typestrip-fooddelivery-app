@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 1em;
+}
+.logo {
+  width: 50px;
+  border-radius: 4px;
+}
+.navbar > ul {
+  display: flex;
+  gap: 20px;
+  padding-right: 30px;
+}
+.navbar > ul > li {
+  text-decoration: none;
+  list-style: none;
+  font-size: 24px;
+}
+.image-food {
+  max-width: 220px;
+  width: 100%;
+}
+.card-container {
+  padding: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  margin: 1em;
+  max-width: 200px;
+  width: 100%;
+}
+.main-header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card-container :hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
