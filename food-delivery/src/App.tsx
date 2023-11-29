@@ -1,12 +1,12 @@
 
 import Header from "./components/Header"
-import Resturantcard from "./components/Resturantcard"
+import { Outlet } from 'react-router-dom'
 import "./App.css"
 const App = () => {
   return (
     <div className="body">
       <Header />
-      <Resturantcard/>
+      <Outlet/>
     </div>
   )
 }
