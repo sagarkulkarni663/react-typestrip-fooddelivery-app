@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Foods from "./Foods"
+import { Link } from "react-router-dom"
 interface Restaurant {
   id: number,
   title: string,
@@ -65,7 +66,7 @@ const Resturantcard = () => {
         :
         <div className="main-header">
 
-          {data && data.map((item) => <Foods key={item.id} resdata={item} />)}
+          {data && data.map((item) => <Link to={"/mobiles/" + item.id} key={item.id}> <Foods resdata={item} /></Link>)}
         </div>
       }
 

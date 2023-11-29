@@ -9,7 +9,6 @@ interface myData {
     rating: number
     images: string[]
   },
-  key: number
 }
 const Foods: React.FC<myData> = (props) => {
   const { resdata } = props

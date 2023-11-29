@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, } from 'react-router-dom'
 import AboutUs from './components/AboutUs.tsx'
 import ContactUs from './components/ContactUs.tsx'
 import Resturantcard from "./components/Resturantcard"
+import MoreInfo from './components/MoreInfo.tsx'
 
 
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/contactus",
         element: <ContactUs />
+      },
+      {
+        path: "/mobiles/:id",
+        element: <MoreInfo />
       }
     ]
   },
