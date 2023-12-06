@@ -1,8 +1,11 @@
 
 import "./Header.css"
 import { NavLink } from "react-router-dom"
-
+import { useSelector } from "react-redux"
+import type { RootState } from '../redux-store/appStore'
 const Header = () => {
+  const card = useSelector((store: RootState) => store.cart.items)
+
   return (
     <>
       <div className="header">
@@ -15,7 +18,7 @@ const Header = () => {
             <li><NavLink to="/">Home</NavLink></li>
             <li> <NavLink to="/aboutus">About Us</NavLink></li>
             <li><NavLink to="/contactus">Contact Us</NavLink></li>
-            <li>Cart</li>
+            <li><NavLink to="/cart">Cart ({card.length} items)</NavLink></li>
           </ul>
         </div>
       </div>

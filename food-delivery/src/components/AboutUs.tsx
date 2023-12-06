@@ -1,8 +1,23 @@
+import { Component } from 'react';
 
-const AboutUs = () => {
-  return (
-    <div>AboutUs</div>
-  )
+interface mycomponet {
+  message: string
+}
+interface mystate {
+  data: number
 }
 
-export default AboutUs
+
+export default class AboutUs extends Component<mycomponet, mystate>{
+  constructor(props: mycomponet) {
+    super(props);
+    this.state = {
+      data: 1
+    }
+  }
+  render() {
+    return (
+      <h1>{this.props.message}</h1>
+    )
+  }
+}

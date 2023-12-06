@@ -1,8 +1,8 @@
 
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-
-
+import {useDispatch} from "react-redux"
+import { addItem } from "../redux-store/cartSlice"
 interface myobj {
   id: number,
   title: string,
@@ -29,7 +29,7 @@ const MoreInfo = () => {
     fetchresponse();
   }, []);
   const { title, description, price, discountPercentage, rating, stock, brand, category, images } = data
-
+const dispatch= useDispatch()
 
   return images && images.length > 0 && (
 
@@ -43,6 +43,9 @@ const MoreInfo = () => {
       <h1>stock-{stock}</h1>
       <h1>brand-{brand}</h1>
       <h1>category-{category}</h1>
+      <button style={{ background: "green", padding: '1em', color: "#ffff", cursor: "pointer" }}
+      onClick={()=>dispatch(addItem(data))}
+      > Add to cart </button>
     </div>
   )
 }
