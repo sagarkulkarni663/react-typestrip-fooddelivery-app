@@ -1,10 +1,14 @@
 import { useSelector } from "react-redux"
 import type { RootState } from '../redux-store/appStore'
-
+import {useDispatch} from "react-redux"
+import { removeItem, } from "../redux-store/cartSlice"
 const Cart = () => {
   const card = useSelector((store: RootState) => store.cart.items)
-
+  const dispatch= useDispatch()
+  console.log(card)
   return (
+   
+
     <>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {card.map((item) => (
@@ -18,6 +22,7 @@ const Cart = () => {
                 <h4>{item.description}</h4>
                 <h4>Price -{item.price}</h4>
                 <h4>Rating -{item.rating}</h4>
+                <button onClick={()=>dispatch(removeItem(item.id))}>RemoveItem</button>
               </div>
             </div>
           </div>
